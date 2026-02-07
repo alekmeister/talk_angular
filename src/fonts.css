@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'Golos Text';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../public/assets/fonts/GolosText-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Golos Text';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../public/assets/fonts/GolosText-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Golos Text';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../public/assets/fonts/GolosText-Bold.ttf') format('truetype');
+}

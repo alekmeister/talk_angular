@@ -1,0 +1,17 @@
+<form action=""
+      autocomplete="on"
+      class="login-form"
+      [formGroup]="form"
+      (ngSubmit)="onSubmit()">
+  <h1 class="h1 mb60">Вход </h1>
+  <label class="tt-control-label">
+    Telegram username
+    <input  class="tt-input mb16" name="login" type="text" placeholder="Введите логин" formControlName="username"/>
+  </label>
+  <label class="tt-control-label">
+    Пароль
+    <input class="tt-input mb32" name="password" autocomplete="true" placeholder="Введите пароль" formControlName="password"/>
+  </label>
+  <button type="submit" class="btn btn-shadow">Вход</button>
+</form>
+<img src="/assets/images/login.svg" alt="login-logo">
