@@ -1,4 +1,4 @@
-<form action=""
+<form
       autocomplete="on"
       class="login-form"
       [formGroup]="form"
@@ -8,10 +8,28 @@
     Telegram username
     <input  class="tt-input mb16" name="login" type="text" placeholder="Введите логин" formControlName="username"/>
   </label>
+
   <label class="tt-control-label">
     Пароль
-    <input class="tt-input mb32" name="password" autocomplete="true" placeholder="Введите пароль" formControlName="password"/>
+    <div class="password-input">
+    <input
+      class="tt-input mb32"
+      [type]="isPasswordVisible() ? 'text' : 'password'"
+      name="password"
+      autocomplete="true"
+      placeholder="Введите пароль"
+      formControlName="password"/>
+      <button
+        (click)="isPasswordVisible.set(!isPasswordVisible())"
+        type='button'
+        [class.active]="isPasswordVisible()"
+        class="password-eye-btn">
+
+        <app-password-icon/>
+      </button>
+    </div>
   </label>
+
   <button type="submit" class="btn btn-shadow">Вход</button>
-</form>
+  </form>
 <img src="/assets/images/login.svg" alt="login-logo">

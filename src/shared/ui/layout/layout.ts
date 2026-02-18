@@ -1,23 +1,18 @@
-import {Component, inject, OnInit} from '@angular/core';
-import {RouterOutlet} from '@angular/router';
-import {Sidebar} from '../sidebar/sidebar';
-import {ProfileService} from '@services/profile/profile';
+import { Component, inject, OnInit } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { Sidebar } from '../sidebar/sidebar';
+import { ProfileService } from '@services/profile/profile';
 
 @Component({
   selector: 'app-layout',
-  imports: [
-    RouterOutlet,
-    Sidebar
-  ],
+  imports: [RouterOutlet, Sidebar],
   templateUrl: './layout.html',
   styleUrl: './layout.css',
 })
 export class Layout implements OnInit {
-  profileService = inject(ProfileService)
+  profileService = inject(ProfileService);
 
   ngOnInit() {
-    this.profileService.getMe().subscribe(val => {
-      console.log(val)
-    })
+    this.profileService.getMe();
   }
 }

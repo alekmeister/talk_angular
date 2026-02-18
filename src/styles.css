@@ -3,6 +3,8 @@
   --light-color: #FFFFFF;
   --primary-color: #AE7AFF;
   --gray-color: #5F646D;
+  --light-transparent: rgba(255, 255, 255, 0.75);
+  --dark-hover-color: rgba(22, 22, 22, 1)
 }
 
 
@@ -84,10 +86,18 @@ body {
   margin-bottom: 16px;
 }
 
+.mb20 {
+  margin-bottom: 20px;
+}
+
 .mb32 {
   margin-bottom: 32px;
 }
 
 .mb60 {
   margin-bottom: 60px;
+}
+
+.ml16 {
+  margin-left: 16px;
 }
