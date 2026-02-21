@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Sidebar } from '../sidebar/sidebar';
+import { Sidebar } from 'shared/ui/sidebar';
 import { ProfileService } from '@services/profile/profile';
 
 @Component({

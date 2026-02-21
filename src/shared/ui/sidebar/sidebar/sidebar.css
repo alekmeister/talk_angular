@@ -46,3 +46,19 @@
   height: 16px;
   fill: var(--light-color);
 }
+
+
+.to-subscribers {
+  display: flex;
+  gap: 10px;
+  color: var(--primary-color);
+}
+
+.to-subscribers-link {
+  text-decoration: none;
+}
+
+.to-subscribers-link-icon {
+  width: 18px;
+  height: 18px;
+}
