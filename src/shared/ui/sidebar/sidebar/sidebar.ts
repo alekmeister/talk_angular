@@ -1,17 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { SvgIcon } from '@shared/ui/svg-icon/svg-icon';
-import { NgForOf, NgOptimizedImage } from '@angular/common';
+import { AsyncPipe, NgForOf } from '@angular/common';
 
 import { RouterLink } from '@angular/router';
-import { SubscriberCard } from '../subscriber-card/subscriber-card';
+import { ProfileService } from '@services/profile/profile';
+import { SubscriberCard } from '@shared/ui/sidebar/subscriber-card/subscriber-card';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [SvgIcon, NgForOf, NgOptimizedImage, SubscriberCard, RouterLink],
+  imports: [SvgIcon, NgForOf, RouterLink, AsyncPipe, SubscriberCard],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.css',
 })
 export class Sidebar {
+  profileService = inject(ProfileService);
+
+  subscribers$ = this.profileService.getSubscribersShortList();
+
   menuItems = [
     {
       label: 'Моя страница',
