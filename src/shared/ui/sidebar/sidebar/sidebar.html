@@ -25,3 +25,20 @@
   </a>
   <svg icon="arrow" class="to-subscribers-link-icon"></svg>
 </div>
+
+
+<footer class="sidebar__footer">
+  @if (me(); as me) {
+    @if (me.avatarUrl) {
+      <img [src]="me.avatarUrl | imgUrls" alt="avatar">
+    } @else {
+      <img src="/assets/images/avatar_placeholder.png" alt="avatar">
+    }
+
+    <span class="medium-text username-text">{{me.username }}</span>
+
+    <a routerLink="settings">
+      <svg height="13px" width="13px" icon="settings"></svg>
+    </a>
+  }
+</footer>
