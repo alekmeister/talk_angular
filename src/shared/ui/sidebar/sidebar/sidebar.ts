@@ -44,6 +44,6 @@ export class Sidebar implements OnInit {
 
   ngOnInit() {
     // firstValueFrom без него не выполнится, или нужно подписаться. + в том, что не нужно будет управлять подпиской/отпиской
-    firstValueFrom(this.profileService.getMe());
+    void firstValueFrom(this.profileService.getMe());
   }
 }

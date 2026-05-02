@@ -92,3 +92,6 @@
   color: var(--primary-color);
 }
 
+.settings-icon {
+  color: var(--primary-color)
+}

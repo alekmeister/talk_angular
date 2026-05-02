@@ -29,4 +29,8 @@ export class ProfileService {
       .get<PaginationType<ProfileInterface>>(`${baseApiUrl}/account/subscribers/`)
       .pipe(map((resp) => resp.items.slice(0, 3)));
   }
+
+  getAccount(id: string) {
+    return this.http.get<ProfileInterface>(`${baseApiUrl}/account/${id}`);
+  }
 }
