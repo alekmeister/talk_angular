@@ -17,7 +17,7 @@ import { ImgUrlsPipe } from '@shared/pipes/img-urls-pipe';
 export class Sidebar implements OnInit {
   profileService = inject(ProfileService);
 
-  subscribers$ = this.profileService.getSubscribersShortList(); // $ Observable
+  subscribers$ = this.profileService.getSubscribersShortList(3); // $ Observable
   me = this.profileService.me;
 
   menuItems = [

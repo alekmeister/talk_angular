@@ -24,10 +24,10 @@ export class ProfileService {
     );
   }
 
-  getSubscribersShortList() {
+  getSubscribersShortList(amount: number) {
     return this.http
       .get<PaginationType<ProfileInterface>>(`${baseApiUrl}/account/subscribers/`)
-      .pipe(map((resp) => resp.items.slice(0, 3)));
+      .pipe(map((resp) => resp.items.slice(0, amount)));
   }
 
   getAccount(id: string) {

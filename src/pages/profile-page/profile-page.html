@@ -1,16 +1,39 @@
-@if(profile$ | async; as profile) {
-
+@if (profile$ | async; as profile) {
   <header class="profile-page__header">
-
-  <app-profile-header [profile]="profile"></app-profile-header>
+    <app-profile-header [profile]="profile"></app-profile-header>
 
     <a class="btn to-settings-btn" [routerLink]="['/settings']">
       Редактировать
       <svg icon="settings" class="to-settings-icon"></svg>
     </a>
   </header>
+
+  <main class="profile-page__body">
+    <div></div>
+    <div class="profile_info">
+      <section>
+        <h3 class="h6 mb16">Подписчики</h3>
+        <div class="subscriber-wrapper">
+          @for (subscriber of subscribers$ | async; track subscriber.id) {
+            <a [routerLink]="['/profile', subscriber.id]" class="subscriber_avatar_btn">
+              <img class="subscriber_avatar_img" [src]="subscriber.avatarUrl | imgUrls" alt="ava" />
+            </a>
+          }
+          <a [routerLink]="['/search']" class="to-subscribers_search"> </a>
+        </div>
+      </section>
+      <section>
+        <h3 class="h6 mb16">Навыки</h3>
+        <div class="stack-wrapper">
+          @for (skill of [{ id: 1 }, { id: 2 }]; track skill.id) {
+            <div class="skill-tag">{{ skill.id }}</div>
+          }
+        </div>
+      </section>
+      <section>
+        <h3 class="h6 mb16">О себе</h3>
+        <p class="medium-text">{{ profile.description }}</p>
+      </section>
+    </div>
+  </main>
 }
-
-
-
-
